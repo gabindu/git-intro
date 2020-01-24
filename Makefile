@@ -15,4 +15,4 @@ all : slides handouts
 
 %-handout.pdf: %-handout.md
 #	pandoc -N -V geometry=height=10in,width=7.5in --latex-engine=xelatex $< -o $@
-	pandoc -N -V mainfont="STIXGeneral" -V sansfont="DejaVu Sans" -V monofont="Liberation Mono" -V fontsize=10pt -V geometry=height=10.5in,width=6.5in --pdf-engine=xelatex $< -o $@
+	pandoc -N -V mainfont="STIXGeneral" -V sansfont="DejaVu Sans" -V monofont="Liberation Mono" -V fontsize=10pt -V geometry=height=10.5in,width=7.5in --pdf-engine=xelatex $< -o $@
