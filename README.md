@@ -1,10 +1,6 @@
 # Introduction to git
 
-Slides are in the `git.pdf` file, produced with Rmarkdown in `git.Rmd`. 
+Slides and handout to give a quick overview and hands-on introduction to git.
 
-To get these files locally: 
-
-```
-git clone https://github.com/mbjoseph/git-intro.git
-```
+Based on slides originally created by Max Joseph (https://github.com/mbjoseph/git-intro)
 
