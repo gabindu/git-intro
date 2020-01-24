@@ -54,7 +54,6 @@ commandline. If not, install with [Homebrew](https://brew.sh/), using
 	- **On Windows:** [Git Bash & GUI](https://git-scm.com/downloads):
 	    - includes Git Bash, a command-line terminal which simulates that of a Unix machine
 		  and includes the git commandline client & a SSH client
-        - if Atom is installed, select it as default editor
 2. [GitHub Desktop](http://windows.github.com): a simple & very convenient GUI
 
     \uncover<7>{Optionally, create yourself an account on GitHub and log in on
