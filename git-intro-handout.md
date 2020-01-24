@@ -8,7 +8,7 @@ header-includes:
 ---
 
 
-## Discuss
+# Discuss
 
 What is your current version control system?
 
@@ -17,7 +17,7 @@ What is your current version control system?
 3. How much would your science/teaching/life suffer if your workstation exploded right now? (scale from 1-10)
 
 
-## What is git
+# What is git
 
 Version control system (VCS)
 
@@ -28,14 +28,14 @@ Version control system (VCS)
   and websites (GitHub/GitLab/BitBucket)
 - many modern editors support it directly without the need of external software
 
-## Why use git
+# Why use git
 
 "Always remember your first collaborator is your future self, and your past self doesn't answer emails" 
 
 - Christie Bahlai
 
 
-## What is git good for?
+# What is git good for?
 
 - backup
 - reproducibility
@@ -44,7 +44,7 @@ Version control system (VCS)
 - transparency
 
 
-## Installation on Windows & Mac
+# Installation on Windows & Mac
 
 1. - **On Mac OS**, git and ssh should already be available on the
 commandline. If not, install with [Homebrew](https://brew.sh/), using
@@ -57,13 +57,13 @@ commandline. If not, install with [Homebrew](https://brew.sh/), using
         - if Atom is installed, select it as default editor
 2. [GitHub Desktop](http://windows.github.com): a simple & very convenient GUI
 
-    \uncover<7>{Optionally, create yourself an account on GitHub and log in on
+    Optionally, create yourself an account on GitHub and log in on
 GitHub Desktop. (We will actually use GitLab for most things, but having
-access to GitHub directly is nice as well.)}
+access to GitHub directly is nice as well.)
 
 ---
 
-## Installation on Linux
+# Installation on Linux
 
 - usually nothing to do!
 - if necessary,  `apt-get install git`
@@ -73,7 +73,7 @@ access to GitHub directly is nice as well.)}
   - if you use Emacs, install `magit` package.
 
 
-## Initial Git & SSH configuration
+# Initial Git & SSH configuration
 
 - Set your name and email in Git:
    - in GitHub Desktop: Options -> Git
@@ -100,13 +100,13 @@ access to GitHub directly is nice as well.)}
       to easily copy the relevant text.
 
 
-## Command line git
+# Command line git
 
 It's best to play around with git on the commandline at first, to better
 understand what it does. (Then it's ok to switch to a GUI.)
 
 
-\pause
+
 
 Make a directory with a file:
 
@@ -120,9 +120,9 @@ Create other files, of whatever type you want (LaTeX, Markdown, HTML, Python
 scripts, ...) - binary files are ok as well!
 
 
-## Tell git to keep track of your files
+# Tell git to keep track of your files
 
-### Initializing a repository
+## Initializing a repository
 
 ```
 git init
@@ -131,15 +131,15 @@ git init
 \smallskip
 Notice the `.git/` directory which was created!
 
-\pause
-### Checking repository status
+
+## Checking repository status
 
 ``` 
 git status
 ```
 
-\pause
-### Adding your file to be tracked by git
+
+## Adding your file to be tracked by git
 
 ```
 git add welcome.txt
@@ -156,23 +156,23 @@ git add --all
 
 
 
-## Your changes are now "staged"
+# Your changes are now "staged"
 
 ![](fig/git.png)
 
 (Image from Software Carpentry)
 
 
-## Committing
+# Committing
 
-### Changes aren't final until they're committed
+## Changes aren't final until they're committed
 
 ```
 git status
 ```
 
-\pause
-### Committing
+
+## Committing
 
 Once you're sure that your changes are worth saving
 
@@ -183,18 +183,18 @@ git commit -m 'changed x, y, and z'
 ```
 
 
-## Commit messages
+# Commit messages
 
 - Describe why and the what "in a nutshell"
 - Note to your future self (and to anyone else who you're collaborating with)
 
-\pause
+
 ![](http://imgs.xkcd.com/comics/git_commit.png)
 
 
-## What did we do?
+# What did we do?
 
-### Commands to investigate changes
+## Commands to investigate changes
 ```
 git status
 git log
@@ -203,7 +203,7 @@ git diff file
 ```
 
 
-## Make another change
+# Make another change
 
 1. Change file
 2. Add ("stage") changes
@@ -211,7 +211,7 @@ git diff file
 4. View updated log
 
 
-## Now, do something really stupid
+# Now, do something really stupid
 
 - "Accidentally" introduce some errors to your file (or even delete a file!)
 
@@ -225,23 +225,23 @@ git diff file
     ```
 
 
-## What happened?
+# What happened?
 
 ![](fig/git.png)
 
 (Image from Software Carpentry)
 
 
-## Wait, what does HEAD refer to?
+# Wait, what does HEAD refer to?
 
 ![Commits $\approx$ a stack of heads](fig/git_staging.pdf)
 
 (Image from Software Carpentry)
 
 
-## Mirroring your repository on the internet
+# Mirroring your repository on the internet
 
-### GitHub vs. GitLab vs. BitBucket
+## GitHub vs. GitLab vs. BitBucket
 
 **Private** repos:
 
@@ -258,14 +258,14 @@ git diff file
     - Popularity & user base
 
 \bigskip
-\pause
+
 **You can use all three if you want! (But I personally find GitLab the best
 free offer at the moment.)**
 
 
-## Mirroring your repository on the internet
+# Mirroring your repository on the internet
 
-### Setting up a "remote"
+## Setting up a "remote"
 
 1. Create repository on GitHub/GitLab/BitBucket with no .gitignore, no README, and no license
 
@@ -274,15 +274,15 @@ free offer at the moment.)**
     (use the URL created for your project on the website, best the one using SSH,
     to avoid having to type in passwords all the time.)
 
-\pause
-### How to check:
+
+## How to check:
 
 ```
 git remote -v
 ```
 
-\pause
-### Once your repository has been linked to remote
+
+## Once your repository has been linked to remote
 
 Push (or "publish") your changes:
 
@@ -292,28 +292,28 @@ git push -u origin master
 \smallskip
 (after the first time, you can simply use `git push`)
 
-\smallskip\pause
+\smallskip
 Check the remote website to see new changes.
 
 
-## Overview
+# Overview
 
 ![](fig/git.png)
 
 (Image from Software Carpentry)
 
-## Things you can do with a remote repository
+# Things you can do with a remote repository
 
-### Use the fancy website interface
+## Use the fancy website interface
 
 - examine your code, the commit log, keep track of issues, etc.!
 - Interface with other services (e.g. Slack.com) to get notifications on
   commits, discuss changes with team members...
 - Collaborate with others!
 
-\pause
 
-### Synchronize and continue work on a different computer
+
+## Synchronize and continue work on a different computer
 
 - Start from scratch by cloning your remote repo.
 - Otherwise, update the local repo by doing:\quad  ```git pull```
@@ -322,7 +322,7 @@ Check the remote website to see new changes.
 - Technical detail: \quad `git fetch` only checks the status of the remote, while
   `git pull` actually moves those changes into your working copy.
 
-## Clone an already existing repository
+# Clone an already existing repository
 
 Find the URL of a repository you want to work on.
 
@@ -344,7 +344,7 @@ repository.
 - This automatically connects your new local repo with the remote, so you can
   directly use `git push` and `git pull`.
 
-## Branches
+# Branches
 
 - Any repository has a default "branch" in which all files are stored, usually
 called "master".  This branch is usually reserved for the current most
@@ -361,9 +361,9 @@ the master branch:
     ![Branching](fig/git_branching.png)
 
 
-## Working in a branch
+# Working in a branch
 
-### Create a local branch
+## Create a local branch
 
 - Create & checkout a new branch (for now, use your first name as the name for
   the branch):
@@ -373,8 +373,8 @@ the master branch:
 - Work on the files as before, stage, commit, and push to the remote server.
 - Inspect the log to see what happened (`git log`)
 
-\pause
-### Ask for your changes to be merged into `master`
+
+## Ask for your changes to be merged into `master`
 
 When you're satisfied with your work (and you pushed to the remote), it's time
 to "merge" it into the master branch. Usually, only the maintainer of the
@@ -388,9 +388,9 @@ which is done on the website:
 - click on "merge request" next to your branch
 - fill in some details in the form to explain what you did
 
-## What else?
+# What else?
 
-### Slack.com
+## Slack.com
 
 - A website with private "chat rooms" or "channels"
 - enables convenient on-topic discussions (avoiding email chains and hard to find information),
@@ -402,14 +402,14 @@ which is done on the website:
   like me to (re-)send an invitation. 
 
 
-## Additional ressources
+# Additional ressources
 
-### Motivation
+## Motivation
 
 - [Ram K. 2013: Git can facilitate greater reproducibility and increased transparency in science.](https://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7)
 
-\pause
-### References
+
+## References
 
 - [Pro Git](https://git-scm.com/book/en/): free book by Scott Chacon and Ben
   Straub with everything you might ever want to know about git
@@ -417,8 +417,8 @@ which is done on the website:
 
 - [On undoing, fixing, or removing commits in git: A git choose your own adventure](http://sethrobertson.github.io/GitFixUm/fixup.html)
 
-\pause
-### Champlain St-Lambert Collaboration Ressources
+
+## Champlain St-Lambert Collaboration Ressources
 
 - [CCSL GitLab repositories](https://gitlab.com/champlain-math-dept): currently
   for Generic Course Plans and math.mychamplain.ca
