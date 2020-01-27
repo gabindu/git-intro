@@ -1,33 +1,55 @@
-# History files
-.Rhistory
-.Rapp.history
+# Created by https://www.gitignore.io/api/emacs
+# Edit at https://www.gitignore.io/?templates=emacs
 
-# Session Data files
-.RData
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 
-# Example code in package build process
-*-Ex.R
+# Org-mode
+.org-id-locations
+*_archive
 
-# Output files from R CMD build
-/*.tar.gz
+# flymake-mode
+*_flymake.*
 
-# Output files from R CMD check
-/*.Rcheck/
+# eshell files
+/eshell/history
+/eshell/lastdir
 
-# RStudio files
-.Rproj.user/
+# elpa packages
+/elpa/
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
+# reftex files
+*.rel
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
+# AUCTeX auto folder
+/auto/
 
-# knitr and R markdown default cache directories
-/*_cache/
-/cache/
+# cask packages
+.cask/
+dist/
 
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
+
+# End of https://www.gitignore.io/api/emacs
