@@ -453,6 +453,29 @@ which is done on the website:
 - _Always_ use `git pull` before you start editing. This pulls in any changes
   made by others (or yourself on another computer!) from the remote repository.
 
+## Using a graphical user interface (GUI) to git
+
+Now that you're comfortable with the principles behind git, you are ready to
+do everything with a few clicks (instead of typing `git add`, `git commit`,
+etc. all the time)!
+
+### On Windows or Mac OS:
+
+Install [Github Desktop](https://desktop.github.com/) (if not done yet), then
+  add "an already existing repository" from your computer. It's quite
+  self-explicatory!
+
+\pause
+### On Linux:
+
+- If you use Emacs, I recommend installing the `magit` package 
+  (ask me for help configuring it if necessary).
+- Otherwise, there are many other GUIs for git available (and which might
+  already be installed on your system, e.g. `gitk`). There is also an
+  unofficial version of [Github Desktop for
+  Linux](https://github.com/shiftkey/desktop) (which I haven't tested myself).
+
+
 ## What else?
 
 ### Slack.com
