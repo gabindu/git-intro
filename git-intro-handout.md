@@ -2,7 +2,7 @@
 title: "Version control with git for Mathematicians"
 subtitle: https://github.com/gabindu/git-intro
 author: "Gabriel Indurskis, based on slides by Max Joseph"
-date: "January 27, 2020"
+date: "January 29, 2020"
 header-includes:
   - \hypersetup{colorlinks=true}
 ---
