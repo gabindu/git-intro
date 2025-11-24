@@ -2,7 +2,7 @@
 title: "A Quick Intro to Version Control with git"
 subtitle: https://github.com/gabindu/git-intro
 author: "Gabriel Indurskis, based on slides by Max Joseph"
-date: "Nov. 12, 2025"
+date: "Nov. 24, 2025"
 ---
 
 
@@ -482,7 +482,7 @@ Click the ![](fig/vcs-icon.png){height=15px} button (usually the third on the le
 
 - Changes are shown as a list of modified files, clicking on each shows you the difference ("diff") to the previous commit in a side-by-side view.
 - There is no need to stage changes, any modified (or new) file is automatically considered staged when you commit.
-- To commit, you simply enter your commit message at the top, and press "Enter" (or the blue "Commit" button).
+- To commit, you simply enter your commit message at the top, and press "Ctrl-Enter" (or the blue "Commit" button).
 - Click the blue "Sync changes" button to push/pull to/from the remote repository.
 - The log of recent commits is automatically shown at the bottom.
 
