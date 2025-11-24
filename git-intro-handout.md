@@ -3,8 +3,6 @@ title: "Version control with git for Mathematicians"
 subtitle: https://github.com/gabindu/git-intro
 author: "Gabriel Indurskis, based on slides by Max Joseph"
 date: "January 29, 2020"
-header-includes:
-  - \hypersetup{colorlinks=true}
 ---
 
 
@@ -30,7 +28,7 @@ Version control system (VCS)
 
 # Why use git
 
-"Always remember your first collaborator is your future self, and your past self doesn't answer emails" 
+"Always remember your first collaborator is your future self, and your past self doesn't answer emails"
 
 - Christie Bahlai
 
@@ -140,7 +138,7 @@ touch this directory or its contents!
 
 ## Checking repository status
 
-``` 
+```
 	git status
 ```
 
@@ -389,7 +387,7 @@ repository.
       cd folder-where-you-want-it
       git clone URL
       ```
-	  	  
+
 - This automatically connects your new local repo with the remote, so you can
   directly use `git push` and `git pull`.
 
@@ -468,7 +466,7 @@ Install [Github Desktop](https://desktop.github.com/) (if not done yet), then
 
 ## On Linux:
 
-- If you use Emacs, I recommend installing the `magit` package 
+- If you use Emacs, I recommend installing the `magit` package
   (ask me for help configuring it if necessary).
 - Otherwise, there are many other GUIs for git available (and which might
   already be installed on your system, e.g. `gitk`). There is also an
@@ -487,7 +485,7 @@ Install [Github Desktop](https://desktop.github.com/) (if not done yet), then
 	- create/inspect issues directly from the chat
 \smallskip
 - I've created a Slack group ["CCSL Math Dept"](https://ccslmathdept.slack.com) for us, simply let me know if you'd
-  like me to (re-)send an invitation. 
+  like me to (re-)send an invitation.
 
 
 # Additional ressources

@@ -3,8 +3,6 @@ title: "A Quick Intro to Version Control with git"
 subtitle: https://github.com/gabindu/git-intro
 author: "Gabriel Indurskis, based on slides by Max Joseph"
 date: "Nov. 12, 2025"
-header-includes:
-  - \hypersetup{colorlinks=true}
 ---
 
 
@@ -29,7 +27,8 @@ Version control system (VCS)
 
 ## Why use git
 
-"Always remember your first collaborator is your future self, and your past self doesn't answer emails" - Christie Bahlai
+"Always remember your first collaborator is your future self, and your past self doesn't answer emails"\
+\hspace*{1ex}\hfill - _Christie Bahlai_
 
 \pause
 - backup
@@ -72,20 +71,22 @@ commandline. If not, install with Homebrew (install from <https://brew.sh>), usi
      ```
      git config --global user.name "Vlad Dracula"
      git config --global user.email "vlad@tran.sylvan.ia"
-	 git config --list
+     git config --list
      ```
 
-- Create yourself an SSH key pair:
-    - In a terminal, do:
-      ```
-  	  ssh-keygen -t ed25519
-	    ```
-- Upload your public SSH key to GitHub (or GitLab or similar)
-  - Create yourself a free account
-  - After logging on the website, click on your profile image, User Settings, SSH Keys
-	- Copy & Paste your **public** key, usually found in `~/.ssh/id_ed25519.pub` (or
-      maybe `id_rsa.pub` if you already had an older key)
-  - This enables a quicker way to up- and download files directly from the commandline, without the need of entering passwords.
+- (Optional:) Setup SSH for easier syncing with remote repos:
+
+  - Create yourself an SSH key pair:
+      - In a terminal, do:
+        ```
+        ssh-keygen -t ed25519
+        ```
+  - Upload your public SSH key to GitHub (or GitLab or similar)
+    - Create yourself a free account
+    - After logging on the website, click on your profile image, User Settings, SSH Keys
+    - Copy & Paste your **public** key, usually found in `~/.ssh/id_ed25519.pub` (or
+        maybe `id_rsa.pub` if you already had an older key)
+    - This enables a quicker way to up- and download files directly from the commandline, without the need of entering passwords.
 
 
 ## Command line git
@@ -122,8 +123,8 @@ directory you created, then execute:
 ```
 
 \smallskip
-If you call `ls -a`, you should now notice that a hidden `.git/` directory was
-created. This is where git does its magic, and you should therefore never
+Behind the scenes, `git` has now created a hidden folder `.git/` directory.
+This is where git does its magic, and you should therefore never
 touch this directory or its contents!
 
 \pause
@@ -163,9 +164,8 @@ _never_ even propose to track these files.  You can download an appropriate
 
 ## Your changes are now "staged"
 
-![](fig/git.png)
-
-(Image from Software Carpentry)
+![](fig/git.png){width=80%}\
+\hspace*{1ex}\hfill (Image from Software Carpentry)
 
 
 ## Committing
@@ -173,29 +173,52 @@ _never_ even propose to track these files.  You can download an appropriate
 ### Changes aren't final until they're committed
 
 ```
-git status
+  git status
 ```
+This should show you that changes are "staged" and "ready to be committed" - but that's not actually done yet.
 
 \pause
 ### Committing
 
-Once you're sure that your changes are worth saving
-
-(THIS WILL GO ON YOUR PERMANENT RECORD)
+Once you're sure that your changes are worth saving, do:
 
 ```
 	git commit -m 'changed x, y, and z'
 ```
 
 \pause
-If you just use `git commit`, git will open an editor to ask you for a commit
-message. You can set the default editor by one of the following commands:
+### Checking the log
+
+You can see the list of all recent commits (in reverse order) with the command
 
 ```
-	git config --global core.editor "atom --wait"
-	git config --global core.editor "emacs -nw"
-	git config --global core.editor "zile"
+  git log
 ```
+
+## Committing
+
+### Warning:
+
+If you just use `git commit` _without a message_, git will open a (commandline text) editor to **ask** you for a commit
+message. This editor might be strange to you, and you might not even know how to save or to exit! (Chances are the editor is `vim`, and to save and exit, you can press the `ESC` key, and then `ZZ`.)
+
+\pause
+\medskip
+ You can change the default editor - for example to set it to Visual Studio Code, type in the following in a terminal:
+
+```
+  git config --global core.editor "code --wait"
+```
+
+\pause
+### Amending a commit message
+
+If you're unhappy with your last log message, you can change it using the command
+
+```
+  git commit --amend
+```
+(This will open the editor with your previous log message.)
 
 ## Commit messages
 
@@ -203,8 +226,8 @@ message. You can set the default editor by one of the following commands:
 - Note to your future self (and to anyone else who you're collaborating with)
 
 \pause
-![](http://imgs.xkcd.com/comics/git_commit.png)
-
+![](fig/xkcd_1296_git_commit_2x.png)
+\hspace*{1ex} \hfill (<https://xkcd.com/1296>)
 
 ## Now make more changes and repeat!
 
@@ -219,7 +242,7 @@ message. You can set the default editor by one of the following commands:
 	   git diff file
 	```
 3. Add ("stage") changes with \quad `git add file(s)`
-4. Commit changes with \quad `git commit -m commit-message`
+4. Commit changes with \quad `git commit -m "descriptive message"`
 5. View updated log with \quad `git log`
 
 
@@ -239,16 +262,14 @@ message. You can set the default editor by one of the following commands:
 
 ## What happened?
 
-![](fig/git.png)
-
-(Image from Software Carpentry)
+![](fig/git.png){width=80%}\
+\hspace*{1ex}\hfill (Image from Software Carpentry)
 
 
 ## Wait, what does HEAD refer to?
 
-![Commits $\approx$ a stack of heads](fig/git_staging.pdf)
-
-(Image from Software Carpentry)
+![](fig/git_staging.pdf){width=75%}\
+\hspace*{1ex}\hfill (Image from Software Carpentry)
 
 
 
@@ -257,37 +278,28 @@ message. You can set the default editor by one of the following commands:
 Up until now, everything has happened solely on your computer (and in fact,
 only in the directory you worked in). To have a backup and to synchronize
 between different computers (and possibly collaborators), you should link your
-repository to a "remote repository". There are several popular websites for this:
-
+local repository to a "remote repository":
 \pause
+
 ### GitHub vs. GitLab vs. BitBucket
 
-**Private** repos (only accessible by yourself or others you share it with):
+There are several popular websites which offer **free** accounts and remote repository storage (public or private):
 
-- (only very recently) free on GitHub, but only < 4 collaborators.
-- free on BitBucket (w/ < 6 collaborators)
-- free on GitLab (**unlimited** collaborators)
+- [GitHub](https://github.com): The "original", used by many open-source projects. Integrates very easily with Visual Studio Code (as both are owned by Microsoft).
+- [GitLab](https://gitlab.com)
+- [Bitbucket](https://bitbucket.org)
 
-
-\smallskip
-
-- all very similar, but differences include:
-    - feature set included in free vs. paid plan
-    - open source vs. closed source
-    - popularity & user base
-
-\small
-_I personally find GitLab the best free offer at the moment - but you can
-  use all three if you want (and you can always switch)!_
+**Note**: Free accounts on these services used to have varying limitations on the number of private repositories or collaborators - but these limitations have now (as of 2025) been removed.
 
 
 ## Mirroring your repository on the internet
 
 ### Setting up a "remote"
 
-1. Create an empty repository (or "project") on the GitLab/GitHub/BitBucket website
+1. Create a free account on GitHub/GitLab/BitBucket (your choice)
+2. Create an empty repository (or "project") on the website
    (for now: no .gitignore, no README, and no license)
-2. The website should show you instructions on what to do next, but if you
+3. The website should show you instructions on what to do next, but if you
    already have the files and a git repository on your computer, it is simply:
 
     ```
@@ -298,7 +310,7 @@ _I personally find GitLab the best free offer at the moment - but you can
     (use the URL shown on the website for your project, best the one using SSH,
     to avoid having to type in passwords all the time.)
 
-3. Verify the path of the remote:
+4. Verify the path of the remote:
 
     ```
 	    git remote -v
@@ -317,7 +329,7 @@ Once your repository has been linked to a remote, you can:
 (after the first time, you can simply use `git push`)
 
 \smallskip\pause
-You can then check the remote website to see new changes. (Click on "Repository -> commits".)
+You can then check the remote website to see new changes.
 
 ### Pulling from the remote
 
@@ -336,9 +348,8 @@ the remote, do:
 
 ## Overview
 
-![](fig/git.png)
-
-(Image from Software Carpentry)
+![](fig/git.png){width=80%}\
+\hspace*{1ex}\hfill (Image from Software Carpentry)
 
 ## Things you can do with a remote repository
 
@@ -358,7 +369,7 @@ the remote, do:
 
     ```
 	    git clone URL
-	```
+    ```
 - Update the local repo from the remote with:\quad  ```git pull```
 - Important rule to remember: Always `git pull` before starting to edit your local files!
 
@@ -427,9 +438,9 @@ the main branch:
 
 ### Create a local branch
 
-- Create & checkout a new branch:
+- Create & checkout a new branch:\
    ```
-	 git checkout -b branchname
+	   git checkout -b branchname
 	 ```
 - Work on the files as before, stage, commit, and push to the remote server.
 - Inspect the log to see what happened (`git log`)
@@ -467,11 +478,12 @@ etc. all the time)!
 
 ### In Visual Studio Code
 
-VS Code has `git` built-in, and you can access it using the (usually) third button on the left.
+Click the ![](fig/vcs-icon.png){height=15px} button (usually the third on the left):
 
 - Changes are shown as a list of modified files, clicking on each shows you the difference ("diff") to the previous commit in a side-by-side view.
 - There is no need to stage changes, any modified (or new) file is automatically considered staged when you commit.
 - To commit, you simply enter your commit message at the top, and press "Enter" (or the blue "Commit" button).
+- Click the blue "Sync changes" button to push/pull to/from the remote repository.
 - The log of recent commits is automatically shown at the bottom.
 
 
